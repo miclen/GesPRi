@@ -1,0 +1,13 @@
+/* 
+	Query per la creazione della tabella amministratore
+	Il campo `Password` è di 32 caratteri, perchè la codifica 
+	one-way md5 restituisce una stringa di tale lunghezza
+*/
+
+create table `Amministratore` (
+    `IDAmministratore` int(11) primary key,
+    `NomeUtente` varchar(30) not null,
+    `Password` varchar(32) not null,
+    `Email` varchar(30) not null
+);
+
