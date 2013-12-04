@@ -2,6 +2,7 @@
 
 /*
  * File di configurazione di GesPRi
+ * Autore : Ciro Somma
 */
 
 /* Sostituire i parametri dbname, dbuser, dbpwd
