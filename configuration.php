@@ -9,6 +9,7 @@
  * database MySQL
  * Sostituire il parametro dirbase con la
  * directory di lavoro (local web)
+ * Includere qui tutte le classi
 */
 $conf = array("dbhost" => "localhost",
             "dbname" => "test", 
