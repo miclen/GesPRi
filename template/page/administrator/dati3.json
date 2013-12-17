@@ -1,0 +1,20 @@
+{
+	"articolo1": {
+		"nome": "Francesco",
+		"data":"01/01/13",
+		"universita":"UNISA",
+		"dipartimento":"informatica"
+	},
+	"articolo2": {
+		"nome": "Pollo",
+		"data":"01/01/13",
+		"universita":"UNISA",
+		"dipartimento":"informatica"
+	},
+	"articolo3": {
+		"nome": "Ferrucci",
+		"data":"04/10/03",
+		"universita":"UNISA",
+		"dipartimento":"informatica"
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"articolo1": {
+		"nome": "Francesco_VQR",
+		"data_apertura":"01/01/13",
+		"data_chiusura":"31/12/13",
+		"n_min":"10"
+	},
+	"articolo2": {
+		"nome": "Francesco_VQR",
+		"data_apertura":"01/01/12",
+		"data_chiusura":"31/12/12",
+		"n_min":"9"
+	},
+	"articolo3": {
+		"nome": "Francesco_VQR",
+		"data_apertura":"01/01/11",
+		"data_chiusura":"31/12/11",
+		"n_min":"8"
+	}
+}

@@ -1,0 +1,46 @@
+body {
+    margin-top:3%;
+    padding-left:30%;
+    padding-right:30%;
+    color:#086fa1;
+}
+
+fieldset {
+    border:solid;
+    border-color:#086fa1;
+    padding-right:5%;
+    padding-left:5%;
+    padding-bottom:3%;
+    border-radius:8px;
+    width:100%;
+}
+
+.login {
+    width:100%;
+}
+
+input{
+
+	display: block;
+	width: 100%;
+	height: 20%;
+	padding: 6px 12px;
+	font-size: 14px;
+  	color: #2D004E;
+  	vertical-align: middle;
+  	background-color: #ffffff;
+	background-image: none;
+	border: 1px solid #086fa1;
+	border-radius: 4px;
+
+}
+
+.logo{
+	padding-left:20%;
+	padding-right:20%;
+
+}
+
+td{
+	width:40%;
+}
