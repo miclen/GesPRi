@@ -1,0 +1,18 @@
+body {
+    background-color:#d4f0ff;
+    margin-top:3%;
+}
+
+fieldset {
+    border:solid;
+    border-color:lightgray;
+    background-color:#bfddff;
+    padding-top:3%;
+    padding-bottom:3%;
+    border-radius:8px;
+    width:60%;
+}
+
+.login {
+    width:80%;
+}

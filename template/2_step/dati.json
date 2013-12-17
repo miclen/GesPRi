@@ -1,0 +1,20 @@
+{
+	"articolo1": {
+		"titolo": "Articolo 1",
+		"anno":"2012",
+		"autori":"Andrea Sold&agrave;",
+		"stato":"Provvisorio"
+	},
+	"articolo2": {
+		"titolo": "Articolo 2",
+		"anno":"2013",
+		"autori":"Daniele Vitale",
+		"stato":"Provvisorio"
+	},
+	"articolo3": {
+		"titolo": "Articolo 3",
+		"anno":"2005",
+		"autori":"Andrea Sold&agrave;",
+		"stato":"Definitivo"
+	}
+}

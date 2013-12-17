@@ -1,0 +1,23 @@
+{
+	"articolo1": {
+		"nome": "Francesco",
+		"cognome": "Esposito",
+		"data":"01/01/1990",
+		"universita":"UNISA",
+		"dipartimento":"informatica"
+	},
+	"articolo2": {
+		"nome": "Daniele",
+		"cognome": "Vitale",
+		"data":"07/05/1992",
+		"universita":"UNISA",
+		"dipartimento":"informatica"
+	},
+	"articolo3": {
+		"nome": "Andrea",
+		"cognome": "Sold&agrave;",
+		"data":"04/10/1992",
+		"universita":"UNISA",
+		"dipartimento":"informatica"
+	}
+}
