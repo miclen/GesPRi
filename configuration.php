@@ -20,6 +20,20 @@ $conf = array("dbhost" => "localhost",
 
 require 'class/MySQL.php';
 require 'class/AdminLogin.php';
+require 'class/Admin.php';
+require 'class/AreaScientifica.php';
+require 'class/GestioneAreaScientifica.php';
+require 'class/Dipartimento.php';
+require 'class/GestioneDipartimento.php';
+require 'class/Utente.php';
+require 'class/GestioneUtente.php';
+//require 'class/Notifica.php';
+//require 'class/GestioneNotifica.php';
+//require 'class/Messaggio.php';
+//require 'class/GestioneMessaggio.php';
+require 'class/TipologiaUtente.php';
+require 'class/GestioneTipologiaUtente.php';
+require 'class/LoginUtente.php';
 
 $db = new MySQL($conf['dbname'],$conf['dbuser'],$conf['dbpwd'],$conf['dbhost']);
 

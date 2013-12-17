@@ -1,0 +1,40 @@
+	/* Tables */
+	
+table
+{
+	width: 60%;
+}		
+table.default
+{
+	width: 60%;
+	text-align: left;
+	margin:auto;
+	margin-top:10%;
+	border:1px solid #aaa;
+}
+table.default tbody tr:nth-child(2n+2)
+{
+	background: #f4f4f4;
+}
+table.default td
+{
+	padding: 0.5em 1em 0.5em 1em;
+}
+table.default th
+{
+	text-align: left;
+	padding: 0.5em 1em 0.5em 1em;
+	color: #fff;
+}
+table.default thead
+{
+	background: #444;
+	color: #fff;
+}
+table.default tfoot
+{
+	background: #eee;
+}
+table.default tbody
+{
+}

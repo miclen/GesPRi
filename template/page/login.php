@@ -1,3 +1,8 @@
+<?php
+if(basename($_SERVER['REQUEST_URI']) == basename(__FILE__)) {
+    die('Volevi fare il furbacchione??');
+}
+?>
 <!DOCTYPE html>
 <html>
   <head>

@@ -1,3 +1,16 @@
+drop table if exists `Autori`;
+drop table if exists `ProdottiSelezionati`;
+drop table if exists `BandoVQR`;
+drop table if exists `Messaggio`;
+drop table if exists `Notifica`;
+drop table if exists `UtenteTipo`;
+drop table if exists `TipologiaUtente`;
+drop table if exists `Prodotto`;
+drop table if exists `TipologiaProdotto`;
+drop table if exists `Utente`;
+drop table if exists `Dipartimento`;
+drop table if exists `AreaScientifica`;
+
 create table `AreaScientifica` (
 `IDAreaScientifica` int(11) primary key auto_increment,
 `NomeAreaScientifica` varchar(30) not null unique
@@ -7,8 +20,9 @@ create table `Dipartimento` (
 `IDDipartimento` int(11) primary key auto_increment,
 `Nome` varchar(30) not null unique,
 `AreaScientifica` int(11),
-FOREIGN KEY (`IDDipartimento`) references `AreaScientifica`(`IDAreaScientifica`)
+FOREIGN KEY (`AreaScientifica`) references `AreaScientifica`(`IDAreaScientifica`)
 );
+
 
 create table `Utente` (
 `IDUtente` int(11) primary key auto_increment,
@@ -25,6 +39,12 @@ create table `Utente` (
 `Dipartimento` int(11),
 FOREIGN KEY (`Dipartimento`) references `Dipartimento`(`IDDipartimento`)
 );
+
+
+create table `TipologiaProdotto` (
+`Nome` varchar(30) primary key
+);
+
 
 create table `Prodotto` (
 `IDProdotto` int(11) primary key auto_increment,
@@ -44,24 +64,24 @@ FOREIGN KEY (`Proprietario`) references `Utente`(`IDUtente`)
 );
 
 
-
-create table `TipologiaProdotto` (
-`Nome` varchar(30) primary key
-);
-
-
-
 create table `TipologiaUtente` (
 `Nome` varchar(30) primary key
 );
+
+insert into `TipologiaUtente` values('Ricercatore');
+insert into `TipologiaUtente` values('Dipartimento');
+insert into `TipologiaUtente` values('Area Scientifica');
+insert into `TipologiaUtente` values('Ateneo');
 
 
 create table `UtenteTipo` (
 `NomeTipologia` varchar(30),
 `IDUtente` int(11),
+PRIMARY KEY(`NomeTipologia`,`IDUtente`),
 FOREIGN KEY (`NomeTipologia`)  references `TipologiaUtente`(`Nome`),
 FOREIGN KEY (`IDUtente`) references `Utente`(`IDUtente`)
 );
+
 
 create table `Notifica` (
 `IDNotifica` int(11) primary key auto_increment,
@@ -74,6 +94,7 @@ FOREIGN KEY (`Mittente`) references `Utente`(`IDUtente`),
 FOREIGN KEY (`Destinatario`) references `Utente`(`IDUtente`)
 );
 
+
 create table `Messaggio` (
 `IDMessaggio` int(11) primary key auto_increment,
 `Mittente` int(11),
@@ -85,26 +106,30 @@ FOREIGN KEY (`Mittente`) references `Utente`(`IDUtente`),
 FOREIGN KEY (`Destinatario`) references `Utente`(`IDUtente`)
 );
 
+
 create table `BandoVQR` (
 `IDBando` int(11) primary key auto_increment,
-`Nome` varchar(30) not null,
+`Nome` varchar(30) not null unique,
 `DataApertura` date not null,
 `DataChiusura` date not null,
 `NumeroProdottiConsigliati` int(11) not null
 );
 
+
 create table `ProdottiSelezionati` (
 `IDProdotto` int(11),
 `IDBando` int(11),
 `NumeroPreferiti` int(11) not null,
+PRIMARY KEY(`IDProdotto`,`IDBando`),
+FOREIGN KEY (`IDBando`) references `BandoVQR`(`IDBando`),
 FOREIGN KEY (`IDProdotto`) references `Prodotto`(`IDProdotto`)
 );
+
 
 create table `Autori` (
 `IDUtente` int(11),
 `IDProdotto` int(11),
+PRIMARY KEY (`IDUtente`,`IDProdotto`),
 FOREIGN KEY (`IDUtente`) references `Utente`(`IDUtente`),
 FOREIGN KEY (`IDProdotto`) references `Prodotto`(`IDProdotto`)
 );
-
-

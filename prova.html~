@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script>
+	$(document).ready( function() {
+		$.getJSON( "dati.json", function( data ) {
+  			$.each( data, function( key, val ) {
+				$("<tr><td>"+val.title+"</td><td>"+val.description+"</td><td><input type='submit' value='Apri'>&nbsp;<input type='submit' value='Cancella'></td></tr>").appendTo("#articoli");
+			});
+		});
+	});
+	</script>
+</head>
+<body>
+<table class="default">
+<thead>
+<tr><th>Articolo</th><th>Descrizione</th><th>Operazioni</th></tr>
+</thead>
+<tbody id="articoli">
+</tbody>
+
+</table>
+</body>
+</html>

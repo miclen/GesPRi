@@ -56,11 +56,25 @@ create table `Prodotto` (
 `Proprietario` int(11),
 `Link` varchar(150),
 `NomeRivista` varchar(30),
-`PaginaIniziale` int(150),
+`PaginaIniziale` int(11),
 `PaginaFinale` int(11),
 `Abstract` text,
 FOREIGN KEY (`NomeTipologia`) references `TipologiaProdotto`(`Nome`),
 FOREIGN KEY (`Proprietario`) references `Utente`(`IDUtente`)
+);
+
+create table `CampiTipologiaProdotto` (
+`IDCampo` int(11) primary key auto_increment,
+`TipologiaProdotto` varchar(30) not null
+`NomeCampo` varchar(30) not null,
+FOREIGN KEY (`TipologiaProdotto`) references `TipologiaProdotto`(`Nome`);
+);
+
+create table `ValoreCampiTipologiaProdotto` (
+`IDValoreCampi` int(11) primary key auto_increment,
+`IDCampo` int(11) not null,
+`Valore` varchar(30) not null,
+FOREIGN KEY (`IDCampo`) references `CampiTipologiaProdotto`(`IDCampo`);
 );
 
 
@@ -68,10 +82,7 @@ create table `TipologiaUtente` (
 `Nome` varchar(30) primary key
 );
 
-insert into `TipologiaUtente` values('Ricercatore');
-insert into `TipologiaUtente` values('Dipartimento');
-insert into `TipologiaUtente` values('Area Scientifica');
-insert into `TipologiaUtente` values('Ateneo');
+
 
 
 create table `UtenteTipo` (
@@ -85,8 +96,8 @@ FOREIGN KEY (`IDUtente`) references `Utente`(`IDUtente`)
 
 create table `Notifica` (
 `IDNotifica` int(11) primary key auto_increment,
-`Mittente` int(11) not null,
-`Destinatario` int (11) not null,
+`Mittente` int(11),
+`Destinatario` int (11),
 `Testo` text,
 `Data` date not null,
 `Link` text,
@@ -97,8 +108,8 @@ FOREIGN KEY (`Destinatario`) references `Utente`(`IDUtente`)
 
 create table `Messaggio` (
 `IDMessaggio` int(11) primary key auto_increment,
-`Mittente` int(11) not null,
-`Destinatario` int (11) not null,
+`Mittente` int(11),
+`Destinatario` int (11),
 `Testo` text,
 `Data` date not null,
 `Oggetto` varchar(30) not null,
